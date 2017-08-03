@@ -1,0 +1,17 @@
+
+sst --model-options="\
+--cmdLine=Init --cmdLine=\"Halo2D iterations=2\" --cmdLine=Fini \
+--numNodes=64 \
+--numRanksPerNode=1 \
+--topo=torus \
+--shape=4x4 \
+--width=10x10 \
+--input_latency=100s \
+--output_latency=100s \
+--local_ports=4 \
+--netPktSize=100B \
+--netBW=1B/s \
+--netFlitSize=16B \
+--rtrArb=merlin.xbar_arb_lru \
+--emberRankmapper=fff \
+" ../script/emberLoadCmd.py

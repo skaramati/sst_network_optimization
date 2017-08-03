@@ -1,0 +1,10 @@
+
+#sst --model-options="--help" ../script/emberLoadCmd.py
+
+sst --model-options="\
+--cmdLine=\"DetailedRing\" \
+--topo=torus \
+--shape=1 \
+--detailedModel=sandyBridgeModel \
+--detailedModelParams=sandyBridgeModelParams \
+" ../script/emberLoadCmd.py
