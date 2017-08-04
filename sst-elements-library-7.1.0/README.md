@@ -3,9 +3,9 @@ File list
 --------------------------------------------
 path: sst-elements-library-7.1.0/src/sst/elements/ember/run/configurations/network_optimization
 
-topology_optimizer.py              Topology optimization
+topology_optimizer.py&nbsp; &nbsp; &nbsp;Topology optimization
 
-main_opt_LB.py                     Latency and bandwidth optimizations
+main_opt_LB.py&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Latency and bandwidth optimizations
 
 
 --------------------------------------------
