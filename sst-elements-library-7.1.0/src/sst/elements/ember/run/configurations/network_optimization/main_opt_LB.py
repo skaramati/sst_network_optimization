@@ -367,7 +367,8 @@ def main():
 	parser.add_argument('--output_file', type=str, required=True)
 	parser.add_argument('--latency', type=float, required=True)
 	parser.add_argument('--bandwidth', type=float, required=True)
-
+	parser.add_argument('--iterations', type=int, required=True)
+	parser.add_argument('--tolerance', type=float, required=True)
 
 
         args = parser.parse_args()
@@ -376,6 +377,8 @@ def main():
        	output_file = args.output_file
 	latency = float(args.latency)
 	bandwidth = float(args.bandwidth)
+	tolerance = float(args.tolerance)
+	iterations = int(args.iterations)
 
 
 
@@ -384,9 +387,9 @@ def main():
 	sim_count = 0 # count number of simulations 
         #runs = exhaustive_search(w_init, 0)
 	#find_optimal_point(runs, w_init, npop, sigma,0,cost,sim_count,topo,shape,"black")
-	tolerance = 0.1
+	
 	runs=[]	
-	for i in range(2):
+	for i in range(iterations):
 		runs = greedy_search(runs, w_init, 0, 0.1)
 		w_init = runs[-1][:2]
 		tolerance += 0.1
