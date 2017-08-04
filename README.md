@@ -1,4 +1,4 @@
-# sst_network_optimization
+# SST Network Optimization
 --------------------------------------------
 File list
 --------------------------------------------
