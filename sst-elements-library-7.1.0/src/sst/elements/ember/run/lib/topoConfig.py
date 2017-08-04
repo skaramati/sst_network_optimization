@@ -20,31 +20,23 @@ from sst.merlin import *
 from switch import *
 
 def getOptions():
-	return ['topo=', 'shape=', 'width=', 'local_ports=']
+	return ['topo=', 'shape=']
 
 def parseOptions(opts):
     topo = None
     shape = None
-    width = None
-    local_ports = 1
     for o,a in opts:
         if o in('--topo'):
             topo = a
         elif o in('--shape'):
             shape = a
-	elif o in('--width'):
-            width = a
-	elif o in('--local_ports'):
-            local_ports = a
-
+	
     if None == topo:
         sys.exit('FATAL: must specify --topo=[torus|fattree|dragonfly|dragonfly2]')
     if None == shape:
         sys.exit('FATAL: must specify --shape')
-    if None == width:
-        sys.exit('FATAL: must specify --width')
-
-    return topo, shape, width, local_ports
+    
+    return topo, shape
 
 class TopoInfo:
 	def getNumNodes(self):
@@ -53,15 +45,15 @@ class TopoInfo:
 		pass
 
 class TorusInfo(TopoInfo):
-	def __init__( self, config, width, local_ports ):
+	def __init__( self, config):
 
 		if not config:
 			sys.exit('FATAL: need to topology specify shape' )
 
 		args = config.split(':')
 		shape = args[0]
-		#width = 1
-		#local_ports = 1
+		width = 1
+		local_ports = 1
 
 		if len( args ) > 1:
 			local_ports = int( args[1] )
@@ -72,7 +64,7 @@ class TorusInfo(TopoInfo):
 		self.params = {}
 		self.params["num_dims"] = self.calcNumDim(shape)
 		self.params["torus:shape"] = shape
-		self.params["torus:width"] = width#self.calcWidth(shape,width)
+		self.params["torus:width"] = self.calcWidth(shape,width)
 		self.params["torus:local_ports"] = local_ports 
 		self.numNodes = self.calcNumNodes( shape ) * local_ports
 
@@ -198,10 +190,10 @@ def getTopoObj( topo ):
 			
 	sys.exit("how did we get here")
 
-def getTopoInfo( topo, shape, width, local_ports ):
+def getTopoInfo( topo, shape):
 	for case in switch(topo):
 		if case('torus'):
-			return TorusInfo(shape, width, local_ports)   
+			return TorusInfo(shape)   
 		if case('fattree'):
 			return FattreeInfo(shape)   
 		if case('dragonfly'):

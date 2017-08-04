@@ -28,7 +28,6 @@ def run_sst(topo,shape,numNodes,motif):
 	'--numRanksPerNode=1 '
 	'--topo=%s '
 	'--shape=%s '
-	'--width=1x1 '
 	'--netBW=25GB/s '
         '--input_latency=30ns '
 	'--rtrArb=merlin.xbar_arb_lru ' 

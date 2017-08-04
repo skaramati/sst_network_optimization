@@ -30,9 +30,9 @@ import nullEmber as NullEmber
 def getOptions():
 	return NicConfig.getOptions() + RtrConfig.getOptions() + EmberConfig.getOptions()
 
-def run( opts, platParamsName, topo, shape, width, local_ports, jobs, perNicParams = None ):
+def run( opts, platParamsName, topo, shape, jobs, perNicParams = None ):
 
-	topoInfo = TopoConfig.getTopoInfo( topo, shape, width, local_ports )	
+	topoInfo = TopoConfig.getTopoInfo( topo, shape )	
 	topoObj = TopoConfig.getTopoObj( topo )
 
 	print 'Platform: configuration "{0}"'.format( platParamsName )

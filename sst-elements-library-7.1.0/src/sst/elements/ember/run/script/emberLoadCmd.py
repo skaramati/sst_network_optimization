@@ -33,7 +33,7 @@ for o,a in opts:
 	if o in ('--help'):
 		sys.exit( 'emberLoadJob: options {0} '.format(myOptions) )
 
-topo, shape, width, local_ports = topoConfig.parseOptions(opts)
+topo, shape = topoConfig.parseOptions(opts)
 params = platConfig.parseOptions(opts)
 
 numNodes, ranksPerNode, motifs, random = jobInfo.parseOptions(opts)
@@ -47,4 +47,4 @@ if detailedModel and detailedModelParams:
 if random:
 	job.setRandom()
 
-emberLoadBase.run( opts, params, topo, shape, width, local_ports, [ job ], {} ) 
+emberLoadBase.run( opts, params, topo, shape, [ job ], {} ) 
