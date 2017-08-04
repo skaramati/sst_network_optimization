@@ -10,9 +10,9 @@ main_opt_LB.py&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Latency and
 
 
 --------------------------------------------
-Command Line Arguments-topology_optimizer.py
+Command Line Arguments
 --------------------------------------------
-
+### topology_optimizer.py
 Example:  ./topology_optimizer.py --motif "FFT3D iteration=1 nx=64 ny=64 nz=64" --output_file=out.csv
 
 --motif (required) - Input motif and its arguments 
@@ -27,11 +27,7 @@ These were the steps to the process:
 3. Run topology optimizer
 
 
-
-
---------------------------------------------
-Command Line Arguments-main_opt_LB.py
---------------------------------------------
+### main_opt_LB.py
 Example: ./main_opt_LB.py  --output_file=out.csv --bandwidth=200 --latency=1e-9 --iterations=5 --tolerance=0.1
 
 --output_file (required) - output file name to save the simulation result
