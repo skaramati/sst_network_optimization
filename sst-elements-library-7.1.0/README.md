@@ -18,10 +18,10 @@ Example:  ./topology_optimizer.py --motif "FFT3D iteration=1 nx=64 ny=64 nz=64" 
 
 
 These were the steps to the process:
-    1 ) Implement the motif
-    2 ) Add the following line to your motif:
+1. Implement the motif
+2. Add the following line to your motif:
 	printf("###execution_time %f\n", execution time);
-    3 ) Run topology optimizer
+3. Run topology optimizer
 
 
 
@@ -39,11 +39,11 @@ Example: ./main_opt_LB.py  --output_file=out.csv --bandwidth=200 --latency=1e-9 
 --tolerance (required) - set the tolerance limit for execution time
 
 These were the steps to the process:
-    1 ) Implement the motif
-    2 ) Add the following line to your motif:
+1. Implement the motif
+2. Add the following line to your motif:
 	printf("###execution_time %f\n", execution time)
-    3 ) In main_opt_LB.py, update def run_sst(w) based on the motif and system parameters
-    4 ) Run main_opt_LB.py
+3. In main_opt_LB.py, update def run_sst(w) based on the motif and system parameters
+4. Run main_opt_LB.py
 
 
 
